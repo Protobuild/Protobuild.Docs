@@ -131,6 +131,15 @@ Once you have generated your C# projects, you can build your code in any of
 the standard ways supported via .NET, whether that's using Visual Studio, 
 Xamarin Studio, MonoDevelop or ``msbuild`` / ``xbuild`` from the command line.
 
+Project generation will have created a solution file in the same directory as
+Protobuild.  You can open this with any of the IDEs to start working on your
+project.
+
+When adding or removing files in your C# projects from Visual Studio, Xamarin
+Studio or MonoDevelop, remember to save the projects in the IDE and then run
+either ``--sync`` or ``--resync`` to save your changes back to your definition
+files.
+
 Further reading
 -------------------
 

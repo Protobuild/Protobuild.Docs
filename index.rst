@@ -32,6 +32,7 @@ own projects.
     content_projects
     external_projects
     project_migration
+    package_management
 
 .. _user-guides:
 
