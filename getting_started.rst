@@ -65,14 +65,11 @@ module configuration.
 If you're creating a module from scratch, you'll need to refer to the
 documentation on the various project types and how to create them:
 
-.. toctree::
-    :maxdepth: 2
-
-    application_projects
-    console_projects
-    library_projects
-    content_projects
-    external_projects
+ * :doc:`application_projects`
+ * :doc:`console_projects`
+ * :doc:`library_projects`
+ * :doc:`content_projects`
+ * :doc:`external_projects`
 
 Generating projects
 ---------------------
