@@ -28,6 +28,13 @@ have protocol buffers precompiled with `protobuf-net`_).
 
 This file is copied as-is into the project generation templates before they
 are used to generate the projects.
+
+.. tip::
+
+    For more information about what is supported inside
+    additional project transforms, extract the full templates as described
+    below.  The additional project transforms document has access to all of
+    the functionality that the full generation templates do.
     
 Extracting the XSLT templates
 --------------------------------
