@@ -26,6 +26,8 @@ own projects.
     :maxdepth: 2
 
     getting_started
+    faq
+    support
     application_projects
     console_projects
     library_projects
