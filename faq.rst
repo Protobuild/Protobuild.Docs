@@ -104,8 +104,8 @@ What files should I keep in source control?
 
 When using Protobuild, you should place the following files in source control:
 
-  * Build\Projects\*
-  * Build\Module.xml
+  * Build\\Projects\\*.definition
+  * Build\\Module.xml
   * Protobuild.exe
   * Any other source code files
 
