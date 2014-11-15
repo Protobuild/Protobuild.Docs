@@ -45,7 +45,7 @@ following command:
 
 .. tip::
     You'll notice that when adding MonoGame that Protobuild will clone the
-    MonoGame Git repository.  This is because (as at the time of writing),
+    MonoGame Git repository.  This is because (as of the time of writing),
     MonoGame does not ship binary Protobuild packages.
 
 Packages can ship binary or source versions, or both.  By default, when a binary
