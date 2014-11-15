@@ -17,6 +17,8 @@ create your project.
 
 .. _the GitHub repository: https://github.com/hach-que/Protobuild/raw/master/Protobuild.exe
 
+.. _start-from-template:
+
 Start with a template
 ------------------------
 
@@ -28,10 +30,14 @@ placed Protobuild.  You can start with a new template by running:
 
 ::
 
-    $ Protobuild.exe --start http://protobuild.org/Protogame/Template.Blank
+    $ Protobuild.exe --start http://protobuild.org/Protogame/Template.Blank <name>
 
+Replace ``<name>`` with the name you want to give your new project.  This will
+be the name used when creating the solution file.
+    
 If you are running Mac OS X or Linux, you'll need to prefix the above command
-with ``mono`` (as with all commands in this documentation that execute Protobuild).
+with ``mono`` (as with all commands in this documentation that execute 
+Protobuild).
     
 This will create a Protobuild module using the template at the specified URL.
 You can find more templates by searching the `Protobuild package index`_.

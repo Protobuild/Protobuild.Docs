@@ -13,7 +13,7 @@ Primarily the features of Protobuild's package management system over NuGet are:
     not available for the platform.
   * The ability to swap source and binary versions of packages, reducing
     the work required to diagnose issues in a package's functionality.
-  * Support for project templates as packages.
+  * Support for module templates as packages.
 
 Finding packages
 -------------------
@@ -56,6 +56,19 @@ fall back to cloning the source repository (if the package has one).
     Protobuild will automatically add the folder containing the package to your
     ``.gitignore`` file, if your module is being tracked in a Git repository.
 
+If you want to add a package using a specific branch, you can use
+the following command:
+
+::
+
+    $ Protobuild.exe --add http://protobuild.org/MonoGame/MonoGame@develop
+
+If you want to add a package using a specific Git commit, you can use:
+
+::
+
+    $ Protobuild.exe --add http://protobuild.org/MonoGame/MonoGame@81bdf42b88acd5e859d856bc0f7fa18004ff977e
+
 Switching a package to source format
 -------------------------------------
 
@@ -68,7 +81,7 @@ get Protobuild to switch the package to a source format with:
 
 The URI is the URI of the package.  If you don't remember it, you can view
 ``Build\Module.xml``, which contains all of the packages added to your
-project, and their URIs.
+module, and their URIs.
 
 .. note::
     This will only work if the package has a Git repository URL configured.
@@ -85,7 +98,7 @@ get Protobuild to switch the package to a binary format with:
 
 The URI is the URI of the package.  If you don't remember it, you can view
 ``Build\Module.xml``, which contains all of the packages added to your
-project, and their URIs.
+module, and their URIs.
 
 .. note::
     This will only work if there is a binary version of the package available
@@ -111,3 +124,9 @@ Creating a package
 
 If you want to create and publish a package for your own library on the
 Protobuild index, refer to the :doc:`creating_packages` documentation.
+
+Using template packages
+-------------------------
+
+You can use template packages to quickly set up new modules.  This is detailed
+in the Getting Started guide under :ref:`start-from-template`.

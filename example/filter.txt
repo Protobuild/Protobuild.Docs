@@ -1,0 +1,10 @@
+# Include project definitions for package
+include ^Build/Publish/(.*)\.definition$
+include ^Build/Module.xml$
+
+# Include binary files for Linux
+include ^MyLibrary/bin/Linux/AnyCPU/Debug/(.*)\.(dll|dll\.config|so)$
+
+# Rewrite file locations
+rewrite ^Build/Publish/(.*)$ Build/Projects/$1
+rewrite ^MyLibrary/bin/Linux/AnyCPU/Debug/(.*)$ MyLibrary/$1
