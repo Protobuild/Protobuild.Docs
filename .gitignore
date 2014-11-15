@@ -1,0 +1,3 @@
+# ignore these files
+_build
+/Protobuild.Docs.kdev4
