@@ -1,4 +1,4 @@
-Migrating Existing Projects
+Migrating Existing C# Projects
 ==============================
 
 If you have an existing project you wish to convert to Protobuild, you'll need

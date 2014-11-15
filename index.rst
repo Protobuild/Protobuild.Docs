@@ -26,6 +26,11 @@ own projects.
     :maxdepth: 2
 
     getting_started
+    application_projects
+    console_projects
+    library_projects
+    content_projects
+    external_projects
     project_migration
 
 .. _user-guides:

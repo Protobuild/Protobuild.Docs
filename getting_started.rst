@@ -39,5 +39,69 @@ Common starting templates (including library templates and console
 applications) can be found under `the commons organisation`_ on the Protobuild
 index.
 
+.. note::
+    The term ``module`` means the directory which contains Protobuild.exe, and
+    all of your project definitions collectively.  Protobuild modules can have
+    ``submodules``, which are subdirectories that contain their own Protobuild
+    executable and project definitions.
+    
+    Outside of this Getting Started guide, ``project`` refers to an individual
+    Protobuild project definition, and not the module as a whole.  We just use
+    the term ``project`` here since it's a familiar term.
+
 .. _Protobuild package index: http://protobuild.org/index
 .. _the commons organisation: http://protobuild.org/commons
+
+Start from scratch
+--------------------
+
+You can also create an empty Protobuild module if you wish to create project
+definitions from scratch.  To do this, just run the Protobuild executable with
+no arguments, and it will automatically create the required directories and
+module configuration.
+
+If you're creating a module from scratch, you'll need to refer to the
+documentation on the various project types and how to create them:
+
+.. toctree::
+    :maxdepth: 2
+
+    application_projects
+    console_projects
+    library_projects
+    content_projects
+    external_projects
+
+Generating projects
+---------------------
+
+Once you have created your module, you'll need to generate the C# projects so
+that you can build your code.  To generate the C# projects for your module, run
+the following command:
+
+::
+
+    $ Protobuild.exe --generate
+
+.. tip::
+    By default, this will generate C# projects for the current platform you
+    are running Protobuild on.
+    
+You can specify what platform you want to generate C# projects for by passing
+it as an argument to ``--generate``.  For example, to generate projects for
+Windows, use:
+
+::
+
+    $ Protobuild.exe --generate Windows
+
+You can also synchronise changes you have made in your C# projects back to the
+project definition files by running:
+
+::
+
+    $ Protobuild.exe --resync
+
+This will synchronise and then regenerate the C# projects.  If you don't wish to
+regenerate the C# projects (to avoid the Visual Studio project reload dialog),
+you can use ``--sync`` instead.
