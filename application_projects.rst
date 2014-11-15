@@ -106,6 +106,13 @@ is being generated for Mac OS X, you could use the following definition:
     :language: xml
     :emphasize-lines: 10
 
+.. tip::
+    You can also use ``#ifdef`` to isolate platform-specific code.  Protobuild
+    by default declares ``PLATFORM_<name>`` when projects are generated; e.g
+    when generating for Windows, ``PLATFORM_WINDOWS`` will be declared,
+    when generating for Mac OS, ``PLATFORM_MACOS`` will be declared and so-on
+    so-forth.
+
 Another example is that you might have functionality which is supported on
 all platforms, except one or two.  A common example might be functionality
 which relies on the ``dynamic`` keyword in C#, which is not available on iOS.
