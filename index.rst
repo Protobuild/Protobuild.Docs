@@ -42,6 +42,7 @@ own projects.
     ios_codesign
     web_platform
     service_dependencies
+    customizing_protobuild
 
 .. _user-guides:
 

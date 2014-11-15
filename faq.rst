@@ -138,6 +138,8 @@ the pull request to be accepted.
 
 .. _on GitHub: https://github.com/hach-que/Protobuild/pulls
 
+.. _build-protobuild:
+
 How do I build Protobuild itself?
 -----------------------------------
 
