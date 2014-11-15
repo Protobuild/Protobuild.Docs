@@ -2,7 +2,7 @@ Welcome to Protobuild
 ======================================
 
 `Protobuild`_ is a project generation system for C#.  It aims to make
-cross-platform development in C# easier, by generating your projects in an
+cross-platform development in C# easier, by generating your projects in the
 appropriate format for each platform.
 
 Protobuild is fully open source and available under an MIT license.
