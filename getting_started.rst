@@ -30,7 +30,7 @@ placed Protobuild.  You can start with a new template by running:
 
 ::
 
-    $ Protobuild.exe --start http://protobuild.org/Protogame/Template.Blank <name>
+    $ Protobuild.exe --start http://protobuild.org/commons/Console <name>
 
 Replace ``<name>`` with the name you want to give your new project.  This will
 be the name used when creating the solution file.
