@@ -54,7 +54,7 @@ You can find more templates by searching the `Protobuild package index`_.
     
     Outside of this Getting Started guide, ``project`` refers to an individual
     Protobuild project definition, and not the module as a whole.  We just use
-    the term ``project`` here since it'll be familiar to readers.
+    the term ``project`` here since it's familiar to readers.
 
 .. _Protobuild package index: http://protobuild.org/index
 .. _the commons organisation: http://protobuild.org/commons
