@@ -35,6 +35,7 @@ own projects.
     external_projects
     project_migration
     project_properties
+    module_options
     including_submodules
     package_management_protobuild
     package_management_nuget
