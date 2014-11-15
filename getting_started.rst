@@ -11,11 +11,43 @@ then refer to :doc:`project_migration` for performing a project migration.
 Download Protobuild
 --------------------
 
-First you'll need to download Protobuild itself.  Download the executable from
-`the GitHub repository`_ and place it in an empty directory where you want to
-create your project.
+First you'll need to download Protobuild itself:
 
-.. _the GitHub repository: https://github.com/hach-que/Protobuild/raw/master/Protobuild.exe
+.. raw:: html
+
+    <p id="download" >
+      <strong>
+        <a id="download" href="https://github.com/hach-que/Protobuild/raw/master/Protobuild.exe">Download Protobuild</a>
+      </strong>
+    </p>
+    <style type="text/css">
+      p#download {
+        text-align: center; 
+        margin-top: 40px; 
+        margin-bottom: 40px;
+        font-size: 24px;
+      }
+    
+      p#download > strong > a {
+        display: block;
+        width: 50%; 
+        margin: auto; 
+        border: 1px solid #CCC;
+        padding: 20px;
+        background-color: #FFF;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      p#download > strong > a:hover {
+        background-color: #DDD !important;
+      }
+    </style>
+
+After you have downloaded Protobuild, place it in an empty directory
+where you want to create your project.
+
+.. _Download Protobuild: 
 
 .. _start-from-template:
 
