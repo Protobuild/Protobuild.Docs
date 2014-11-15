@@ -1,5 +1,5 @@
 Defining Console Projects
-=======================
+==========================
 
 Console projects define a project which will run underneath a terminal or
 command prompt.  Protobuild itself is an example of a console application.

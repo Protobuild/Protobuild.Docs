@@ -1,5 +1,5 @@
 Defining Content Projects
-=======================
+=============================
 
 Content projects allow you to include content into your projects in a
 cross-platform manner.  These are frequently used in conjunction with

@@ -1,5 +1,5 @@
 Defining Application Projects
-=======================
+================================
 
 Application projects define a project which will run as a graphical application
 on an operating system or device.  They share a common definition structure with

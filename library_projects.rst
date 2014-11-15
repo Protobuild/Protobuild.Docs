@@ -1,5 +1,5 @@
 Defining Library Projects
-=======================
+===========================
 
 Library projects define a project which contains common functionality you want
 to share between multiple projects.
