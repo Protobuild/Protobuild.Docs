@@ -26,9 +26,9 @@ project in Protobuild.
 Open a terminal or command prompt, and navigate to the directory where you
 placed Protobuild.  You can start with a new template by running:
 
-.. code:: shell
+::
 
-  $ Protobuild.exe --start http://protobuild.org/Protogame/Template.Blank
+    $ Protobuild.exe --start http://protobuild.org/Protogame/Template.Blank
 
 If you are running Mac OS X or Linux, you'll need to prefix the above command
 with `mono` (as with all commands in this documentation that execute Protobuild).

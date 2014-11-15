@@ -11,6 +11,8 @@ the repository.
 If you are on Mac OS X or Linux, you'll need to open a terminal, and once
 in the root of project repository, run:
 
+::
+
     $ mono Protobuild.exe --generate
 
 You'll need Mono installed if you are on Mac OS X or Linux.
