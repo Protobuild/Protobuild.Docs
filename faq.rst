@@ -1,7 +1,7 @@
 Frequently Asked Questions
 =============================
 
-Why did you create Protobuild?
+Why was Protobuild created?
 --------------------------------
 
 I created Protobuild in July 2013 when I started having to manage targeting 3 
