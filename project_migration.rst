@@ -48,3 +48,25 @@ declarations intersect). It is called `find-platform-dependent-files.sh`_
 and can act as a good starting point for the conversion.
 
 .. _find-platform-dependent-files.sh: https://github.com/hach-que/MonoGame/blob/42b6adafa714c5151f46429b6b24016340c85f70/MonoGame.Framework/find-platform-dependent-files.sh
+
+Explicitly setting Project GUIDs
+-----------------------------------
+
+By default, Protobuild generates unique GUIDs for all projects, based on their
+name and the platform being generated.
+
+If you are migrating an existing library to Protobuild, and there are 
+users currently using your library in source form, you'll need to keep 
+the GUIDs the same when you transition to Protobuild, so that existing 
+users of your library won't have the reference in their projects
+broken when you change.
+    
+.. warning::
+    If you do specify explicit project GUIDs, Protobuild can't warn you 
+    of a GUID conflict, as we use conflicting project GUIDs to detect 
+    duplicate external project references in the solution.
+
+You can explicitly set the project GUIDs as per the example below.
+
+.. literalinclude:: example/project_guids.xml
+    :language: xml

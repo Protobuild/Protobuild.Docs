@@ -34,9 +34,11 @@ own projects.
     content_projects
     external_projects
     project_migration
+    project_properties
     package_management_protobuild
     package_management_nuget
     creating_packages
+    ios_codesign
 
 .. _user-guides:
 

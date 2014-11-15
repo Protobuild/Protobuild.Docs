@@ -109,9 +109,8 @@ is being generated for Mac OS X, you could use the following definition:
 .. tip::
     You can also use ``#ifdef`` to isolate platform-specific code.  Protobuild
     by default declares ``PLATFORM_<name>`` when projects are generated; e.g
-    when generating for Windows, ``PLATFORM_WINDOWS`` will be declared,
-    when generating for Mac OS, ``PLATFORM_MACOS`` will be declared and so-on
-    so-forth.
+    when generating for Windows, ``PLATFORM_WINDOWS`` will be declared.  Refer
+    to the :ref:`custom-definitions` property for a full list of defaults.
 
 Another example is that you might have functionality which is supported on
 all platforms, except one or two.  A common example might be functionality
