@@ -17,7 +17,7 @@ create your project.
 
 .. _the GitHub repository: https://github.com/hach-que/Protobuild/raw/master/Protobuild.exe
 
-Start with a Template
+Start with a template
 ------------------------
 
 Starting with an existing project template is the easiest way to create a new
@@ -51,6 +51,8 @@ index.
 
 .. _Protobuild package index: http://protobuild.org/index
 .. _the commons organisation: http://protobuild.org/commons
+
+.. _start-from-scratch:
 
 Start from scratch
 --------------------
@@ -102,6 +104,10 @@ project definition files by running:
 
     $ Protobuild.exe --resync
 
+.. tip::
+    This is the default command, and is triggered when double-clicking
+    Protobuild under Windows.
+
 This will synchronise and then regenerate the C# projects.  If you don't wish to
 regenerate the C# projects (to avoid the Visual Studio project reload dialog),
 you can use the following command instead:
@@ -120,3 +126,16 @@ Protobuild, you can run the following command:
 .. note::
     All of the above commands accept a platform as an argument.  For more
     detail on what commands are available, try ``--help``.
+
+Building code
+---------------------
+
+Once you have generated your C# projects, you can build your code in any of
+the standard ways supported via .NET, whether that's using Visual Studio, 
+Xamarin Studio, MonoDevelop or ``msbuild`` / ``xbuild`` from the command line.
+
+Further reading
+-------------------
+
+We recommend reading up on the different available project types (linked above
+in :ref:`start-from-scratch`).  You can also refer to the :doc:`faq`.
