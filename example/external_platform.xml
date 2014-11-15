@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ExternalProject Name="MyExternal">
+  
+  <Reference Include="MyLibrary" />
+  
+  <Platform Name="Windows">
+    <NativeBinary Path="ThirdParty/Windows/NativeLib.dll" />
+    <Project
+      Name="ExternalProj"
+      Guid="758CB33D-6EBD-41EA-BB0C-55B1C97A325F"
+      Path="ThirdParty/ExternalProj/ExternalProj.Windows.csproj" />
+  </Platform>
+  
+  <Platform Name="MacOS">
+    <NativeBinary Path="ThirdParty/MacOS/NativeLib.dylib" />
+    <Project
+      Name="ExternalProj"
+      Guid="758CB33D-6EBD-41EA-BB0C-55B1C97A325F"
+      Path="ThirdParty/ExternalProj/ExternalProj.MacOS.csproj" />
+  </Platform>
+  
+  <Platform Name="Linux">
+    <NativeBinary Path="ThirdParty/Linux/NativeLib.so" />
+    <Project
+      Name="ExternalProj"
+      Guid="758CB33D-6EBD-41EA-BB0C-55B1C97A325F"
+      Path="ThirdParty/ExternalProj/ExternalProj.Linux.csproj" />
+  </Platform>
+  
+  <Platform Name="iOS">
+    <Reference Include="OpenTK" />
+  </Platform>
+  
+</ExternalProject>
