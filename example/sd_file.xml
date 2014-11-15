@@ -1,0 +1,6 @@
+<Compile Include="MyClass.OpenGL.cs">
+  <Services>GLBackend</Services>
+</Compile>
+<Compile Include="MyClass.DirectX.cs">
+  <ExcludeServices>GLBackend</ExcludeServices>
+</Compile>

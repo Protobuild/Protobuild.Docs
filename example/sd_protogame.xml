@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="MyApplication" Path="MyApplication" Type="App">
+  <References>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </References>
+  <Dependencies>
+    <Uses Name="Protogame/Physics" />
+  </Dependencies>
+  <Files>
+    <Compile Include="Program.cs" />
+  </Files>
+</Project>

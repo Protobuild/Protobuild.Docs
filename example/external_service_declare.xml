@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExternalProject Name="MyLibrary">
+
+  <!-- The dependencies and services we declared in our source project -->
+  
+  <Dependencies>
+    <Uses Name="SecondaryGraphics">
+      <Platforms>MacOS,Linux</Platforms>
+    </Uses>
+    <Recommends Name="PrimaryGraphics">
+      <Platforms>Windows</Platforms>
+    </Recommends>
+  </Dependencies>
+  
+  <Services>
+    <Service Name="PrimaryGraphics">
+      <Platforms>Windows</Platforms>
+      <Conflicts>SecondaryGraphics</Conflicts>
+      <Requires>PrimaryAdditional</Requires>
+    </Service>
+    <Service Name="SecondaryGraphics">
+      <Platforms>Windows,MacOS,Linux</Platforms>
+      <Conflicts>PrimaryGraphics,PrimaryAdditional</Conflicts>
+    </Service>
+    <Service Name="PrimaryAdditional" />
+  </Services>
+  
+  <!-- Add the binary reference based on what service is enabled -->
+  
+  <Service Name="PrimaryGraphics">
+    <Binary Name="MyLibrary" Path="MyLibrary/MyLibraryWithPrimary.dll" />
+  </Platform>
+  
+  <Service Name="SecondaryGraphics">
+    <Binary Name="MyLibrary" Path="MyLibrary/MyLibraryWithSecondary.dll" />
+  </Platform>
+
+</ExternalProject>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="MyLibrary" Path="MyLibrary" Type="Library">
+  <Properties>
+    <CustomDefinitions>
+      <Platform Name="Windows">USE_PRIMARY</Platform>
+    </CustomDefinitions>
+  </Properties>
+  <References>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </References>
+  <Dependencies>
+    <Uses Name="SecondaryGraphics">
+      <Platforms>MacOS,Linux</Platforms>
+    </Uses>
+    <Recommends Name="PrimaryGraphics">
+      <Platforms>Windows</Platforms>
+    </Recommends>
+  </Dependencies>
+  <Services>
+    <Service Name="PrimaryGraphics">
+      <Platforms>Windows</Platforms>
+      <Conflicts>SecondaryGraphics</Conflicts>
+      <Requires>PrimaryAdditional</Requires>
+    </Service>
+    <Service Name="SecondaryGraphics">
+      <RemoveDefine>USE_PRIMARY</RemoveDefine>
+      <AddDefine>USE_SECONDARY</RemoveDefine>
+      <Platforms>Windows,MacOS,Linux</Platforms>
+      <Conflicts>PrimaryGraphics,PrimaryAdditional</Conflicts>
+    </Service>
+    <Service Name="PrimaryAdditional" />
+  </Services>
+  <Files>
+    <Compile Include="Program.cs" />
+  </Files>
+</Project>

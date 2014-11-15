@@ -39,6 +39,7 @@ own projects.
     package_management_nuget
     creating_packages
     ios_codesign
+    service_dependencies
 
 .. _user-guides:
 
