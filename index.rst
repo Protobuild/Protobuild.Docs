@@ -32,7 +32,9 @@ own projects.
     content_projects
     external_projects
     project_migration
-    package_management
+    package_management_protobuild
+    package_management_nuget
+    creating_packages
 
 .. _user-guides:
 
