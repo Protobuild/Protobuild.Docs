@@ -41,9 +41,10 @@ Protobuild).
     
 This will create a Protobuild module using the template at the specified URL.
 You can find more templates by searching the `Protobuild package index`_.
-Common starting templates (including library templates and console
-applications) can be found under `the commons organisation`_ on the Protobuild
-index.
+
+.. tip::
+    Common starting templates (including templates for libraries) can be
+    found under `the commons organisation`_ on the Protobuild index.
 
 .. note::
     The term ``module`` means the directory which contains Protobuild.exe, and
