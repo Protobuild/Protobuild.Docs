@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentProject Name="ExampleContent">
+  <Source Include="ExampleContent/" Match="*.png" />
+  <Source Include="ExampleContent/" Match="*.jpg" />
+  <Source Include="ExampleContent/subfolder/" Match="*.bin" />
+</ContentProject>

@@ -31,6 +31,19 @@ browser.
 
 .. _JSIL: http://jsil.org/
 
+Project definition location
+-----------------------------
+
+All project definitions for your module should be placed under the 
+``Build\Module`` directory and have a ``.definition`` extension.  The name of
+the project should match the name of the file as well; for a project called
+"MyApplication", the project definition should reside at 
+``Build\Module\MyApplication.definition``.
+
+.. tip::
+    This is the location for all project definitions, including application,
+    console, library, content and external projects.
+
 Basic structure
 ----------------
 
@@ -45,6 +58,8 @@ Already there are some structures which will look familiar to anyone who has
 viewed the XML of a ``.csproj`` file.  While there are most optional sections
 than shown in the example above, the two most important (and required) sections
 are:
+
+.. _declaring-references:
 
 Declaring references
 ---------------------
@@ -67,6 +82,8 @@ application project to depend on it, you could add a definition like so:
     :language: xml
     :emphasize-lines: 6
     
+.. _declaring-files:
+
 Declaring files
 -----------------
 
@@ -106,6 +123,8 @@ with ``--sync`` to save your changes to the project definitions, then edit
 the project definition in a text editor to add the ``<Platforms>`` (or 
 ``<ExcludePlatforms>`` tag), and then run Protobuild with the ``--generate``
 option to generate the C# projects again (for your IDE).
+
+.. _limiting-platforms:
 
 Limiting platforms
 ------------------------

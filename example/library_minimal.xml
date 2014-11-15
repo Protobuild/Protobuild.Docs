@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="MyLibrary" Path="MyLibrary" Type="Library">
+  <References>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </References>
+  <Files>
+    <Compile Include="MyClass.cs" />
+  </Files>
+</Project>
