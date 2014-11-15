@@ -26,6 +26,7 @@ own projects.
     :maxdepth: 2
 
     getting_started
+    project_migration
 
 .. _user-guides:
 
