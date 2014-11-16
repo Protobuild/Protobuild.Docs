@@ -49,6 +49,8 @@ and can act as a good starting point for the conversion.
 
 .. _find-platform-dependent-files.sh: https://github.com/hach-que/MonoGame/blob/42b6adafa714c5151f46429b6b24016340c85f70/MonoGame.Framework/find-platform-dependent-files.sh
 
+.. _project-guids-full:
+
 Explicitly setting Project GUIDs
 -----------------------------------
 

@@ -128,6 +128,21 @@ Protobuild used a procedural or task based system for declaring projects, then
 it would be non-trivial to determine how to synchronise changes in C# projects
 back into the definition files.
 
+.. raw:: html
+
+  <a name="project-guids-faq"></a>
+
+I've seen Protobuild projects explicitly set project GUIDs, do I need to do that?
+----------------------------------------------------------------------------------
+
+Unless you are migrating an existing library which has users using it in
+source form, you **do not** need to set any project GUIDs.  Protobuild will
+automatically generate appropriate project GUIDs for all projects you have
+defined.
+
+If you are migrating an existing library, and want to retain your project GUIDs
+when migrating to Protobuild, see :ref:`project-guids-full`.
+
 How can I contribute?
 -----------------------
 
