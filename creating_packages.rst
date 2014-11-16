@@ -30,7 +30,7 @@ and create a new package.  Roughly you'll need to follow the steps below:
     * **Library:** A library consumed by other modules.  These are added to
       a module with ``--add``.
     * **Template:** A module template.  These are used with ``--start`` and are
-      outlined later in this document.
+      outlined under :ref:`template-packages`.
       
   * Specify the full URL to your Git repository if applicable.  If you set this,
     then your binary package versions need to offer all projects that your 
@@ -195,3 +195,24 @@ update the "master" branch to the newly pushed package, you can use:
     
     $ Protobuild.exe --push <apikey> MyPackage.tar.lzma http://protobuild.org/MyAccount/MyPackage <githash> <platform> master
 
+.. _template-packages:
+    
+Template packages
+-------------------
+
+Template packages contain templates for a module.  They are structured in the
+exact same way as library packages, except that when the user creates a new
+module using a template, the following process happens:
+
+  * As files are extracted into the module directory, file and directory names
+    have ``{PROJECT_NAME}`` replaced with the project name the user gave to
+    ``--start``.
+  * As files are written, ``{PROJECT_NAME}`` is replaced with the project
+    name, and ``{PROJECT_XML_NAME}`` is replaced with the project name with
+    characters escaped for XML documents.  This process does not apply to
+    binary files.
+
+The `Protobuild common templates`_ repository provides a good reference for
+creating template packages.
+
+.. _Protobuild common templates: https://github.com/hach-que/Protobuild.Commons
