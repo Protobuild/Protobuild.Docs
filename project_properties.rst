@@ -100,12 +100,12 @@ PlatformSpecificOutputFolder
 **Default:** "True"
 
 Determines whether the output paths for binary and object files during
-compilation should reside in "bin\$(Configuration)" and "obj\$(Configuration)"
-(the default), or whether the platform name should be used in the path.  When
-the platform name is included in the path, the binary folder becomes
-"bin\$(Platform)\$(Arch)\$(Configuration)" and the object folder becomes
-"obj\$(Platform)\$(Arch)\$(Configuration)" (where Arch is the .NET 
-concept of platforms, e.g. ``AnyCPU``).
+compilation should reside in "bin\\$(Configuration)" and 
+"obj\\$(Configuration)", or whether the platform name should be used in
+the path (the default).  When the platform name is included in the path, the 
+binary folder becomes "bin\\$(Platform)\\$(Arch)\\$(Configuration)" and the 
+object folder becomes "obj\\$(Platform)\\$(Arch)\\$(Configuration)" (where 
+Arch is the .NET concept of platforms, e.g. ``AnyCPU``).
 
 .. note::
 
@@ -124,9 +124,9 @@ Determines whether the output paths for binary and object files should include
 the project name.  The option implies ``PlatformSpecificOutputFolder``.
 
 When this option is active, the binary and object paths become 
-"bin\$(Project)\$(Platform)\$(Arch)\$(Configuration)" and 
-"obj\$(Project)\$(Platform)\$(Arch)\$(Configuration)" (where Arch is the .NET 
-concept of platforms, e.g. ``AnyCPU``).
+"bin\\$(Project)\\$(Platform)\\$(Arch)\\$(Configuration)" and 
+"obj\\$(Project)\\$(Platform)\\$(Arch)\\$(Configuration)" (where Arch is the 
+.NET concept of platforms, e.g. ``AnyCPU``).
 
 You only need to enable this option if you are targeting Android and you have 
 more than one project residing in the same directory.  Xamarin Studio for 
