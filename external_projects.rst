@@ -52,6 +52,12 @@ dependent on the platform.
 .. code-block:: xml
 
   <Reference Include="MyLibrary" />
+  
+.. warning::
+
+    You can reference other external projects from an external project, but
+    only at the top-level.  You can't reference another external project from
+    within a ``<Project>`` or ``<Service>`` section.
 
 Referencing .NET assemblies on-disk
 -------------------------------------
