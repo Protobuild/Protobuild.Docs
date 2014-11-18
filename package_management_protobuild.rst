@@ -13,6 +13,8 @@ Primarily the features of Protobuild's package management system over NuGet are:
     not available for the platform.
   * The ability to swap source and binary versions of packages, reducing
     the work required to diagnose issues in a package's functionality.
+  * Packages are LZMA compressed and deduplicated to significantly
+    reduce their size.
   * Support for module templates as packages.
 
 Finding packages

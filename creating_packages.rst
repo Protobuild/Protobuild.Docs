@@ -59,7 +59,7 @@ Automatically creating a package file
 ---------------------------------------
 
 Protobuild provides an automatic packaging mechanism which can be used to
-automate the process of packaging your library and tools in most cases.
+automate the process of packaging your binaries in most cases.
 
 .. note::
     
@@ -96,7 +96,10 @@ translate it for that package.  In this case, refer to the manual section below
 on how to create and add the required files as additional content to the
 automatic packaging mechanism's output.
 
-If the automatic packaging mechanism works for you, skip to :ref:`push-package`.
+.. note::
+
+    If the automatic packaging mechanism works for you, skip to 
+    :ref:`push-package`.
 
 Manually creating a package file
 -----------------------------------
@@ -131,6 +134,11 @@ similar to the following structure:
     * MyLibrary
       * MyLibrary.dll
       * NativeLibrary.so
+
+.. note::
+
+    Refer to :ref:`template-packages` for information on filename replacements
+    performed on template packages.
 
 Defining projects
 ~~~~~~~~~~~~~~~~~~~~~
