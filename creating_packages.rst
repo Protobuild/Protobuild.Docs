@@ -4,13 +4,20 @@ Creating Packages for Protobuild
 For an overview of the Protobuild package management system, refer to
 :doc:`package_management_protobuild`.
 
-There's a few important things to take note of when creating a package for
-Protobuild:
+When creating a Protobuild package, you can provide your package in source
+format, binary format or both.
+  
+If your library is stored in a publically accessible Git repository, and uses
+Protobuild, you can provide the Git URL for cloning when creating your package.
+This will allow users to use any version of your library on any platform you
+support, without requiring built packages.
 
-  * The binary version of your package should include all projects that your
-    source repository offers.
-  * For the binary version of your package, you will be declaring external 
-    project versions that are consumed by other projects.
+If you want to provide built packages to reduce download and build times, or if
+your library is not managed by Protobuild, you can provide binary packages.
+These result in a significantly smaller download and almost no build time cost,
+but you'll need to build the code, package it and push it to the Protobuild
+index.  This is particularly useful if your source repository has a large
+history, or has large binary files within it.
 
 Creating your package on the index
 ------------------------------------
@@ -32,9 +39,9 @@ and create a new package.  Roughly you'll need to follow the steps below:
     * **Template:** A module template.  These are used with ``--start`` and are
       outlined under :ref:`template-packages`.
       
-  * Specify the full URL to your Git repository if applicable.  If you set this,
-    then your binary package versions need to offer all projects that your 
-    source repository does.
+  * Specify the full URL to your Git repository if applicable.  If you are
+    providing a source version of your package, then you need to have this
+    set.
   * Write a short description of your package.  Descriptions don't support
     formatting or styling.
   * Click Save.
@@ -48,8 +55,64 @@ and create a new package.  Roughly you'll need to follow the steps below:
     format, you should omit the Git URL and only provide binary versions
     of your package.
 
+Automatically creating a package file
+---------------------------------------
+
+Protobuild provides an automatic packaging mechanism which can be used to
+automate the process of packaging your library and tools in most cases.
+
+.. note::
+    
+    This only applies to Library packages.  Template packages need to follow
+    the manual process outlined in the next section.
+
+Because Protobuild uses a declarative syntax, it can determine the output
+locations and related files from your build, and automatically include them
+in your package.  In addition, it can automatically generate the required
+external projects in the binary package required for usage.
+
+To create a package file automatically, you should run the following commands:
+
+::
+
+    $ Protobuild.exe --generate Windows
+    ... run MSBuild, or build your code via the IDE here ...
+    $ Protobuild.exe --pack . MyPackage-Windows.tar.lzma Windows
+
+The first argument to pack (the dot) indicates the directory path to the
+module being packaged, which in the example above is the current directory.
+
+Repeat this process for each platform you want to build and package.
+
+.. warning::
+    
+    You must build your code before running ``--pack``, or the binaries will not
+    have been built for inclusion in the package.
+    
+The automatic packaging mechanism won't work for all projects; in particular, 
+if you have any external C# projects referenced with the ``<Project>`` tag,
+you'll receive a warning that the automatic packaging mechanism could not
+translate it for that package.  In this case, refer to the manual section below
+on how to create and add the required files as additional content to the
+automatic packaging mechanism's output.
+
+If the automatic packaging mechanism works for you, skip to :ref:`push-package`.
+
+Manually creating a package file
+-----------------------------------
+
+If you are packaging a template, or if the automatic packaging mechanism is
+unable to handle your project, you can extend or replace the process using
+a "filter file".  A filter file describes what files should be included
+during packaging, and can be used to provide files in addition to the
+automatic packaging mechanism, or can be used to construct a package from
+scratch.
+
+In the next few sections, we cover the package structure, how to define
+projects, and how to use filter files.
+
 Package structure
------------------
+~~~~~~~~~~~~~~~~~~~~
 
 The structure for Protobuild packages (for both Library and Template types), is
 very similar to the normal structure of a Protobuild module, with the exception
@@ -70,7 +133,7 @@ similar to the following structure:
       * NativeLibrary.so
 
 Defining projects
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 For your Protobuild module, your projects will currently be defined as normal
 projects.  However, since your binary package won't contain source code, you'll
@@ -86,7 +149,7 @@ Refer to the :doc:`external_projects` for more comprehensive documentation on
 specifying external projects.
       
 Specifying files for inclusion
-----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       
 When building your package from source, it's unlikely to resemble the structure
 of a package.  In order to allow the creation of packages without requiring
@@ -102,48 +165,59 @@ The entries in the filter file are executed in sequence, and the purpose of
 each entry is detailed below.  Lines the start with ``#`` are treated as
 comments, and blank lines are ignored.
 
+Any instances of the text ``%PLATFORM%`` are replaced with the name of the
+platform passed to ``--pack``.  This allows you to use a common filter file
+between platforms.
+
 You will most likely have different filter files for each platform you are
 providing binaries for, as different platforms will require different files
 to be included.
 
-include
-~~~~~~~~~
+**include**:
 
 Specifies that files whose paths match the regular expression should be
 included in the package.
 
-exclude
-~~~~~~~~~
+**exclude**:
 
 Specifies that any files currently in the package that match the regular
 expression should be excluded.
 
-rewrite
-~~~~~~~~~
+**rewrite**:
 
 Rewrites the paths of files in the package matching the regular expression
 to the target expression.  This effectively allows you to move files around
 inside the package when creating it, rather than creating the appropriate
 directory structure before packaging.
 
-Creating a package file
-----------------------------
+**autopackage**:
 
-To create a package file ready for upload, you'll need to run the following
+Invokes the automatic packaging mechanism.  If you need to provide additional
+external projects (because of warning shown during the automatic packaging
+mechanism), you should make the first directive in your filter file to be
+``autopackage``, and then follow on with additional ``include`` and ``rewrite``
+directives to include the additional binaries and external project definitions
+required.
+
+The use of this options requires that the directory passed to ``--pack`` points
+to a module.  If you don't use this option, then the first argument to ``-pack``
+can point to any directory.
+
+Creating the package file
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To create the package file ready for upload, you'll need to run the following
 command:
 
 ::
     
-    $ Protobuild.exe --pack . MyPackage.tar.lzma Build/Filter.Linux.txt
+    $ Protobuild.exe --pack . MyPackage.tar.lzma Linux Build/Filter.Linux.txt
 
 In this example, the current directory ``.`` will be packaged into a file
 called ``MyPackage.tar.lzma``, using the filter file located at
-``Build/Filter.Linux.txt``.  The filter file prevents the created package (or
-any other files in the current directory that don't match), from being included
-in the package if you run multiple ``--pack`` operations.
-
-The filter file can be omitted, but the directory specified must exactly match
-the package structure.
+``Build/Filter.Linux.txt``.  The platform ``Linux`` is specified, which is
+used by both the automatic packaging mechanism (if invoked by ``autopackage``),
+and is also used to replace the text ``%PLATFORM%``.
 
 If you want to upload your package via the Protobuild index web interface, 
 you'll need to pack it into ``.tar.gz`` format instead, as the web interface
@@ -153,8 +227,10 @@ command:
 
 ::
     
-    $ Protobuild.exe --pack . MyPackage.tar.gz Build/Filter.Linux.txt --format tar/gzip
+    $ Protobuild.exe --pack . MyPackage.tar.gz Linux Build/Filter.Linux.txt --format tar/gzip
 
+.. _push-package:
+    
 Publishing a package file
 ---------------------------
 
