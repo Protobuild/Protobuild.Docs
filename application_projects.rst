@@ -107,10 +107,11 @@ is being generated for Mac OS X, you could use the following definition:
     :emphasize-lines: 10
 
 .. tip::
-    You can also use ``#ifdef`` to isolate platform-specific code.  Protobuild
-    by default declares ``PLATFORM_<name>`` when projects are generated; e.g
-    when generating for Windows, ``PLATFORM_WINDOWS`` will be declared.  Refer
-    to the :ref:`custom-definitions` property for a full list of defaults.
+    Within C# code, you can also use ``#ifdef`` to isolate platform-specific 
+    code.  Protobuild by default declares ``PLATFORM_<name>`` when projects
+    are generated; e.g when generating for Windows, ``PLATFORM_WINDOWS`` will
+    be declared.  Refer to the :ref:`custom-definitions` property for a full
+    list of defaults.
 
 Another example is that you might have functionality which is supported on
 all platforms, except one or two.  A common example might be functionality
