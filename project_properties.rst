@@ -237,6 +237,25 @@ when compiling the project.
       <NoWarn>1591,0436</NoWarn>
     </Properties>
 
+CheckForOverflowUnderflow
+------------------------------
+
+**Applies to:** All platforms and project types
+
+**Value type:** "True" or "False"
+
+**Default:** "False"
+
+Enables checked arithmetic in C#.  Checked arithmetic causes .NET to
+throw exceptions when an overflow or underflow occurs, however this results
+in a performance penalty for the additional checks required.
+
+.. note::
+
+    In previous versions of Protobuild, this was set to true for the iOS
+    platform when built in Debug mode.  It is now always off by default,
+    unless enabled by this property.
+
 ManifestPrefix
 -----------------
 
