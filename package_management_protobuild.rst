@@ -158,8 +158,8 @@ If you want to upgrade packages for a specific platform, you can do so with:
     You will need to run Protobuild with ``--generate`` to generate projects
     in the upgraded packages.
 
-Redirecting packages
-------------------------
+Redirecting package URLs
+--------------------------
 
 You can redirect package URLs for packages to use alternate or modified
 versions.  You can configure package URL redirections at a user level, or 
