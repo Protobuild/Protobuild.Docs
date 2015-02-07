@@ -1,0 +1,2 @@
+# This is a comment
+http://source/path -> http://target/newpath

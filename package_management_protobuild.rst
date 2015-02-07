@@ -106,6 +106,87 @@ module, and their URIs.
     This will only work if there is a binary version of the package available
     for the desired commit and platform.
 
+Upgrading a package
+--------------------
+
+If you have added a package which is tracking a branch (the default), then you
+can upgrade a package to the latest version of that branch by using the
+``--upgrade`` option, like so:
+
+::
+
+    $ Protobuild.exe --upgrade <URI>
+
+By default packages usually track the ``master`` branch of a package.  If the
+package is in binary format, and you want to upgrade a specific platform, you
+can do so with:
+
+::
+
+    $ Protobuild.exe --upgrade <URI> <platform>
+
+.. warning::
+    If the package is in source format, this command will undo any local
+    modifications you have made.  It works by deleting the package's folder
+    and replacing it with a newer version.
+
+.. note::
+    You will need to run Protobuild with ``--generate`` to generate projects
+    in the upgraded packages.
+
+Upgrading all packages
+------------------------
+
+You can upgrade all packages in a module like so:
+
+::
+
+    $ Protobuild.exe --upgrade-all
+
+If you want to upgrade packages for a specific platform, you can do so with:
+
+::
+
+    $ Protobuild.exe --upgrade-all <platform>
+
+.. warning::
+    This command will undo local modifications to any packages that are in
+    source format.  It works by deleting all package folders and replacing them
+    with the latest versions.
+
+.. note::
+    You will need to run Protobuild with ``--generate`` to generate projects
+    in the upgraded packages.
+
+Redirecting packages
+------------------------
+
+You can redirect package URLs for packages to use alternate or modified
+versions.  You can configure package URL redirections at a user level, or 
+transiently with command arguments.
+
+To redirect a package URL for a single invocation of Protobuild, use the
+``--redirect`` option like so:
+
+::
+
+    $ Protobuild.exe --redirect http://source/path http://target/newpath
+
+Most often this argument is used in conjunction with either ``--generate`` or
+``--upgrade-all``:
+
+::
+
+    $ Protobuild.exe --redirect http://source/path http://target/newpath --upgrade-all
+
+You can also configure this option at a user level, by creating or modifying
+a file called ``protobuild-redirects.txt`` which resides in your Application Data
+directory (``~/.config/protobuild-redirects.txt`` for Linux and Mac OS).  The format
+of this file looks like:
+
+.. literalinclude:: example/redirects.txt
+    :language: text
+
 Removing packages
 --------------------
 
