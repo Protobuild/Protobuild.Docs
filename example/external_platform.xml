@@ -3,7 +3,7 @@
   
   <Reference Include="MyLibrary" />
   
-  <Platform Name="Windows">
+  <Platform Type="Windows">
     <NativeBinary Path="ThirdParty/Windows/NativeLib.dll" />
     <Project
       Name="ExternalProj"
@@ -11,7 +11,7 @@
       Path="ThirdParty/ExternalProj/ExternalProj.Windows.csproj" />
   </Platform>
   
-  <Platform Name="MacOS">
+  <Platform Type="MacOS">
     <NativeBinary Path="ThirdParty/MacOS/NativeLib.dylib" />
     <Project
       Name="ExternalProj"
@@ -19,7 +19,7 @@
       Path="ThirdParty/ExternalProj/ExternalProj.MacOS.csproj" />
   </Platform>
   
-  <Platform Name="Linux">
+  <Platform Type="Linux">
     <NativeBinary Path="ThirdParty/Linux/NativeLib.so" />
     <Project
       Name="ExternalProj"
@@ -27,7 +27,7 @@
       Path="ThirdParty/ExternalProj/ExternalProj.Linux.csproj" />
   </Platform>
   
-  <Platform Name="iOS">
+  <Platform Type="iOS">
     <Reference Include="OpenTK" />
   </Platform>
   
