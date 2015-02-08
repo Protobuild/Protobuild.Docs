@@ -179,12 +179,22 @@ Most often this argument is used in conjunction with either ``--generate`` or
 
     $ Protobuild.exe --redirect http://source/path http://target/newpath --upgrade-all
 
-You can also configure this option at a user level, by creating or modifying
+You can configure this option at a user level, by creating or modifying
 a file called ``protobuild-redirects.txt`` which resides in your Application Data
 directory (``~/.config/protobuild-redirects.txt`` for Linux and Mac OS).  The format
 of this file looks like:
 
 .. literalinclude:: example/redirects.txt
+    :language: text
+
+Package URLs can also be redirected to a local Git repository residing on your
+machine.  This is useful if you have an internal modified version of a library
+that you want to use across multiple projects.
+
+To redirect to a local Git repository, specify the target URL as ``local-git://``
+followed by the full path to the Git repository:
+
+.. literalinclude:: example/redirects_local.txt
     :language: text
 
 Removing packages

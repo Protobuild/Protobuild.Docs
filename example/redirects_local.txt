@@ -1,0 +1,5 @@
+# On Linux / Mac:
+http://source/path -> local-git:///home/user/path/to/repo
+
+# On Windows:
+http://source/path -> local-git://C:\Users\user\Documents\path\to\repo
