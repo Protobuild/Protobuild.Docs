@@ -110,6 +110,16 @@ tag requires the name of the project, it's GUID and the path to it
     file, you will get strange errors when attempting to build your code under
     MSBuild or Visual Studio.
 
+If you want to add an external C# project to the solution, but not reference it
+in any project, you can define an external project as shown below, and simply
+not add a ``<Reference>`` to it from any Protobuild project:
+
+.. literalinclude:: example/external_noref.xml
+    :language: xml
+
+Since Protobuild loads all definitions from the ``Build\Projects`` folder, the
+external C# project will still be shown and built in the solution.
+
 .. _external-platform-specific:
 
 Platform specific references

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ExternalProject Name="MyExternalNoRef">
+ 
+  <!-- Reference to an external C# project -->
+  <Project
+    Name="ExternalProj"
+    Guid="758CB33D-6EBD-41EA-BB0C-55B1C97A325F"
+    Path="ThirdParty/ExternalProj/ExternalProj.csproj" />
+  
+</ExternalProject>
