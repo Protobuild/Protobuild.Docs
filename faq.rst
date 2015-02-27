@@ -99,6 +99,8 @@ cross-platform support in mind, it explicitly supports binaries per-platform,
 rather than per-framework, which allows libraries dependent on platform-specific
 functionality to be shipped in a package.
 
+.. _source-control:
+
 What files should I keep in source control?
 ----------------------------------------------
 

@@ -45,7 +45,13 @@ First you'll need to download Protobuild itself:
     </style>
 
 After you have downloaded Protobuild, place it in an empty directory
-where you want to create your project.
+where you want to create your project.  Protobuild itself is cross-platform;
+the same executable will run on all desktop platforms.
+
+.. note::
+    If you are using source control, you should add or track Protobuild.exe
+    in your source control system.  For more information, refer to
+    :ref:`source-control`
 
 .. _Download Protobuild: 
 
