@@ -77,17 +77,17 @@ An example of this property in use is:
     <Properties>
       <FrameworkVersions>
         <Platform Name="Android">
-          <Version>4.2</Version>
+          <Version>v4.2</Version>
         </Platform>
         <Platform Name="Windows">
-          <Version>4.0</Version>
+          <Version>v4.0</Version>
           <Profile>ClientOnly</Profile>
         </Platform>
         <Platform Name="Linux">
-          <Version>4.5</Version>
+          <Version>v4.5</Version>
         </Platform>
         <!-- etc. -->
-      </AssemblyName>
+      </FrameworkVersions>
     </Properties>
 
 PlatformSpecificOutputFolder
