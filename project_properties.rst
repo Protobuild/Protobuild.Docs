@@ -77,17 +77,17 @@ An example of this property in use is:
     <Properties>
       <FrameworkVersions>
         <Platform Name="Android">
-          <Version>4.2</Version>
+          <Version>v4.2</Version>
         </Platform>
         <Platform Name="Windows">
-          <Version>4.0</Version>
+          <Version>v4.0</Version>
           <Profile>ClientOnly</Profile>
         </Platform>
         <Platform Name="Linux">
-          <Version>4.5</Version>
+          <Version>v4.5</Version>
         </Platform>
         <!-- etc. -->
-      </AssemblyName>
+      </FrameworkVersions>
     </Properties>
 
 PlatformSpecificOutputFolder
@@ -237,6 +237,40 @@ when compiling the project.
       <NoWarn>1591,0436</NoWarn>
     </Properties>
 
+WarningLevel
+----------------
+
+**Applies to:** All platforms and project types
+
+**Value type:** String
+
+**Default:** 4
+
+A numeric level indicating the warnings that will be emitted when compiling.
+
+.. code-block:: xml
+
+    <Properties>    
+      <WarningLevel>0</WarningLevel>
+    </Properties>
+
+TreatWarningsAsErrors
+----------------
+
+**Applies to:** All platforms and project types
+
+**Value type:** "True" or "False"
+
+**Default:** "False"
+
+Whether or not to treat all warnings as errors.
+
+.. code-block:: xml
+
+    <Properties>    
+      <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    </Properties>
+    
 CheckForOverflowUnderflow
 ------------------------------
 
