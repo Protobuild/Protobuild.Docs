@@ -56,10 +56,32 @@ NuGet package in, add it to the ``References`` section, like so:
     :language: xml
     :emphasize-lines: 6
     
-The reference name is the same as the package name you provided during `--add`.
+The reference name is the same as the package name you provided during ``--add``.
 
 .. note::
     NuGet packages imported through this mechanism always have a single external
     project available for reference, even if the package has multiple DLLs.  When
     a NuGet package contains multiple DLLs, the external project reference will
     add a reference to all of them.
+
+Re-pushing packages to a Protobuild package repository
+------------------------------------------------------------
+
+If you want to re-push a NuGet package (or any kind of supported binary package)
+back to a Protobuild repository, you can do so with the ``repush`` command, like so:
+
+::
+
+    $ Protobuild.exe --repush <apikey> <source_url> <dest_url> <git_hash> <platform> <branch>
+    
+For example, to re-push a copy of Moq from NuGet to the Protobuild index, you would
+use a command like this:
+
+::
+
+    $ Protobuild.exe --repush <apikey> "https-nuget://www.nuget.org/api/v2/|Moq@4.2.1502.911" http://protobuild.org/nuget/Moq hash:4.2.1502.911 Windows 4.2
+
+This is useful if you are running your own Protobuild package repository, and want
+to ensure the packages continue to be available even if the original repository is
+offline.
+    

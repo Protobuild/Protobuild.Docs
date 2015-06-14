@@ -45,7 +45,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Protobuild'
-copyright = '2014, James Rhodes'
+copyright = '2015, J Rhodes'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -204,7 +204,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   ('index', 'Protobuild.tex', 'Protobuild Documentation',
-   'James Rhodes', 'manual'),
+   'J Rhodes', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -234,7 +234,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'protobuild', 'Protobuild Documentation',
-     ['James Rhodes'], 1)
+     ['J Rhodes'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -248,7 +248,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'Protobuild', 'Protobuild Documentation',
-   'James Rhodes', 'Protobuild', 'One line description of project.',
+   'J Rhodes', 'Protobuild', 'One line description of project.',
    'Miscellaneous'),
 ]
 
