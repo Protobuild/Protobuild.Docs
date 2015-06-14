@@ -6,10 +6,8 @@ many package binaries and libraries available through `NuGet`_.
 
 .. _NuGet: http://nuget.org/
 
-Protobuild supports using NuGet packages with Protobuild projects, and indeed,
-references to NuGet libraries are automatically determined when generating
-projects, based on the presence of the NuGet ``packages.config`` in the 
-project's folder.
+Protobuild supports using NuGet packages with Protobuild projects, with support
+for package URLs of the form ``https-nuget://repository.org/|PackageName@PackageVersion``.
 
 .. warning::
     NuGet does not offer proper seperation of platforms for binaries.  You may
@@ -28,42 +26,40 @@ project's folder.
 Adding NuGet packages
 -----------------------
 
-You can add NuGet packages to your project the same way you currently do;
-through your IDE.  By following your existing process, NuGet will update the
-``packages.config`` to reference to the version of package you are using.
-
-Restoring NuGet packages
--------------------------
-
-When Protobuild generates projects, it looks at all the packages defined in
-``packages.config`` (if present), and adds references to the libraries in
-your projects, based on what files it finds in the ``packages`` folder.
-
-This means that restoring NuGet packages is a two-stage process.  First you
-must generate your projects (which will be missing references due to the fact
-that NuGet has not restored the DLLs yet), and then restore the NuGet packages.
-Your IDE may do this automatically for you.  Once the NuGet packages are
-restored, you then need to generate your projects again, at which point
-Protobuild will be able to find the correct DLLs to reference in your project.
-
-Specifying platform-specific configurations
-------------------------------------------------
-
-If you find that one or more of your referenced NuGet libraries are not
-available on a given platform, you can create suffixed ``packages.config``
-files instead, which will be automatically copied by Protobuild based on the
-platform you are generating projects for.
-
-For example, to specify different packages for Windows and Linux, your project
-folder would look similar to the following:
+You can add a NuGet package with the following command:
 
 ::
 
-    * MyProject
-      * Program.cs
-      * packages.Windows.config
-      * packages.Linux.config
-      
-In this case, when generating for Windows, Protobuild will automatically make
-a copy of ``packages.Windows.config`` as ``packages.config``.  Your IDE should
-then restore the correct packages for the platform.
+    $ Protobuild.exe --add <URI>
+
+You'll need to know the repository URL, package name and package version that
+you want to add.  For example, to add the Ninject package from nuget.org at
+version 3.2.2.0, you would use the following command:
+
+::
+
+    $ Protobuild.exe --add "https-nuget://www.nuget.org/api/v2/|Ninject@3.2.2.0"
+
+.. note::
+    You will need to quote the URL as it contains a pipe character for seperating
+    the URL and package name.  This is because on most systems, the pipe character
+    is used to pipe one command into another.
+    
+Referencing NuGet packages
+-------------------------
+
+With Protobuild's support for NuGet packages, you can reference a NuGet package
+like any other.  In the project definition file which you want to reference the
+NuGet package in, add it to the ``References`` section, like so:
+
+.. literalinclude:: example/application_nuget.xml
+    :language: xml
+    :emphasize-lines: 6
+    
+The reference name is the same as the package name you provided during `--add`.
+
+.. note::
+    NuGet packages imported through this mechanism always have a single external
+    project available for reference, even if the package has multiple DLLs.  When
+    a NuGet package contains multiple DLLs, the external project reference will
+    add a reference to all of them.
