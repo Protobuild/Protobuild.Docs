@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ExternalProject Name="MyExternal">
+  
+  <!-- Reference to a Protobuild include project -->
+  <Reference Include="MyInclude" />
+  
+</ExternalProject>

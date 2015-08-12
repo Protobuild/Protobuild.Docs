@@ -32,6 +32,7 @@ own projects.
     console_projects
     library_projects
     content_projects
+    include_projects
     external_projects
     project_migration
     project_properties

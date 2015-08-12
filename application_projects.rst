@@ -31,18 +31,7 @@ browser.
 
 .. _JSIL: http://jsil.org/
 
-Project definition location
------------------------------
-
-All project definitions for your module should be placed under the 
-``Build\Module`` directory and have a ``.definition`` extension.  The name of
-the project should match the name of the file as well; for a project called
-"MyApplication", the project definition should reside at 
-``Build\Module\MyApplication.definition``.
-
-.. tip::
-    This is the location for all project definitions, including application,
-    console, library, content and external projects.
+.. include:: common/project_definition_location.rst
 
 Basic structure
 ----------------

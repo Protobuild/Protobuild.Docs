@@ -43,18 +43,7 @@ The smallest definition for an console project you can have is shown below.
    
 The presence of ``Type="Console"`` ensures this project is an console project.
 
-Project definition location
------------------------------
-
-All project definitions for your module should be placed under the 
-``Build\Module`` directory and have a ``.definition`` extension.  The name of
-the project should match the name of the file as well; for a project called
-"MyConsole", the project definition should reside at 
-``Build\Module\MyConsole.definition``.
-
-.. tip::
-    This is the location for all project definitions, including application,
-    console, library, content and external projects.
+.. include:: common/project_definition_location.rst
    
 Common sections
 -----------------
