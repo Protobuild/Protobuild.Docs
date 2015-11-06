@@ -17,7 +17,7 @@ First you'll need to download Protobuild itself:
 
     <p id="download" >
       <strong>
-        <a id="download" href="https://github.com/hach-que/Protobuild/raw/master/Protobuild.exe">Download Protobuild</a>
+        <a id="download" href="http://protobuild.org/get">Download Protobuild</a>
       </strong>
     </p>
     <style type="text/css">
