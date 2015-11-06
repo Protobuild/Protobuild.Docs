@@ -30,11 +30,7 @@ JSIL Download
 ---------------
 
 The first time you target the Web platform, Protobuild will automatically 
-download and build JSIL into the Application Data directory on your machine. 
-You must have both Git and either xbuild or msbuild in your PATH for this 
-process to work.
+download and use pre-built JSIL binaries.  These binaries will also be used for
+future projects targeting the Web platform.
 
-You **don't** need to include JSIL as a submodule in your repository, nor do 
-you need to ship binary versions of JSIL alongside your application code. 
-Each machine that targets the web platform under Protobuild will 
-automatically have the latest version of JSIL installed for usage.
+You do not need to include JSIL in your project to target the Web platform.
