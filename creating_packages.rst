@@ -76,7 +76,7 @@ To create a package file automatically, you should run the following commands:
 ::
 
     $ Protobuild.exe --generate Windows
-    ... run MSBuild, or build your code via the IDE here ...
+    $ Protobuild.exe --build Windows
     $ Protobuild.exe --pack . MyPackage-Windows.tar.lzma Windows
 
 The first argument to pack (the dot) indicates the directory path to the
