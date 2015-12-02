@@ -45,8 +45,8 @@ dependent on the platform.
 .. warning::
 
     You can reference other external projects from an external project, but
-    only at the top-level.  You can't reference another external project from
-    within a ``<Project>`` or ``<Service>`` section.
+    only at the top-level or under a ``<Plaform>`` tag.  You can't reference
+    another external project from within a ``<Service>`` section.
 
 Referencing .NET assemblies on-disk
 -------------------------------------
