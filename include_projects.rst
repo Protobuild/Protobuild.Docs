@@ -48,3 +48,34 @@ or from an external project:
     :language: xml
     :emphasize-lines: 5
     
+Apply include projects as extensions
+-------------------------------------
+
+Rather than declare an include project as a reference in a normal project,
+you can also use the ``AppliesTo`` attribute on the include project to
+specify that it should be applied to another project.
+
+This allows you to define include projects that works as extensions -
+extending the functionality of another project that is not aware of
+your include project.
+
+You can set the ``AppliesTo`` attribute on the ``IncludeProject`` node,
+like so:
+
+.. literalinclude:: example/include_appliesto.xml
+    :language: xml
+    :emphasize-lines: 2
+
+Limiting platforms
+------------------------
+
+If you have an include project that you only want to apply when certain
+platforms are being generated for, you can use the ``Platforms`` attribute
+to restrict what platforms this include project is included for.
+
+An example of using the ``Platforms`` attribute to restrict when an include
+project is included can be seen below.
+
+.. literalinclude:: example/include_exclude_platforms.xml
+    :language: xml
+    :emphasize-lines: 2

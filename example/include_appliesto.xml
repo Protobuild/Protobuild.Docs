@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<IncludeProject Name="MyInclude" Path="MyInclude" AppliesTo="AnotherProject">
+  <Files>
+    <Compile Include="SomeClass.cs" />
+    <Compile Include="AndroidOnly.cs">
+      <Platforms>Android</Platforms>
+    </Compile>
+    <Compile Include="CustomLinkPath.cs">
+      <Link>CustomLinkPath.cs</Link>
+    </Compile>
+  </Files>
+</IncludeProject>
