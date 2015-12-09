@@ -24,10 +24,22 @@ own projects.
 
 .. toctree::
     :maxdepth: 2
+    :caption: General Information
 
-    getting_started
     faq
     support
+    
+.. toctree::
+    :maxdepth: 2
+    :caption: Graphical Interface
+
+    getting_started_gui
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Command-Line Interface
+
+    getting_started_cmd
     application_projects
     console_projects
     library_projects
