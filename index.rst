@@ -28,6 +28,7 @@ own projects.
 
     faq
     support
+    contributing
     
 .. toctree::
     :maxdepth: 2

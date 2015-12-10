@@ -13,7 +13,7 @@ is then pulled in by the application so that the main entry point class is defin
 in the correct (executable) assembly.
 
 Project structure
-----------------
+-------------------
 
 A simple example of an include project definition is shown below.
 

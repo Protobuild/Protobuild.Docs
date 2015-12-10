@@ -46,7 +46,7 @@ version 3.2.2.0, you would use the following command:
     is used to pipe one command into another.
     
 Referencing NuGet packages
--------------------------
+----------------------------
 
 With Protobuild's support for NuGet packages, you can reference a NuGet package
 like any other.  In the project definition file which you want to reference the

@@ -255,7 +255,7 @@ A numeric level indicating the warnings that will be emitted when compiling.
     </Properties>
 
 TreatWarningsAsErrors
-----------------
+-----------------------
 
 **Applies to:** All platforms and project types
 

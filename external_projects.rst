@@ -8,7 +8,7 @@ External projects also allow you to toggle these references based on the platfor
 that is being generated.
 
 Project structure
-----------------
+-------------------
 
 A simple example of an external project definition, which demonstrates all of
 the available reference types, is shown below.
