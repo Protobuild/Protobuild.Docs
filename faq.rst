@@ -148,12 +148,7 @@ when migrating to Protobuild, see :ref:`project-guids-full`.
 How can I contribute?
 -----------------------
 
-Sending pull requests through `on GitHub`_ is the preferred method.  Please 
-note that Protobuild does have a detailed test suite, and if you are fixing a
-bug or adding a new feature, you'll most likely need to create some tests for
-the pull request to be accepted.
-
-.. _on GitHub: https://github.com/hach-que/Protobuild/pulls
+Please refer to the :doc:`contributing` page.
 
 .. _build-protobuild:
 
