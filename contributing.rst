@@ -26,9 +26,12 @@ restrictions to note:
 Copyright licensing / agreement
 ----------------------------------
 
-We are currently in the process of submitting Protobuild to the .NET Foundation.  Until this 
-is finalized, we can't accept any more PRs as we may require signing of a CLA in the near
-future.
+When you submit your PR to GitHub, you will be required to sign the .NET Foundation CLA for
+Protobuild if you haven't done so already.  The automated CLA bot will automatically guide
+you through the process of signing the CLA if necessary.  You can read the CLA ahead of time
+at the `CLA Website`_.
+
+.. _CLA Website: https://cla.dotnetfoundation.org/
 
 Check the issue list
 ----------------------
