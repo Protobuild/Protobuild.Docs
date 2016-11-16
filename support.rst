@@ -1,4 +1,4 @@
-Support
+  Support
 =============================
 
 There are multiple ways to get support for Protobuild.
@@ -10,7 +10,7 @@ If you have feature suggestions, or you're running into issues with
 Protobuild (crashes, bugs or other unexpected behaviour), please file
 an issue `on GitHub`_.
 
-.. _on GitHub: https://github.com/hach-que/Protobuild/issues/new
+.. _on GitHub: https://github.com/Protobuild/Protobuild/issues/new
 
 Twitter
 --------
